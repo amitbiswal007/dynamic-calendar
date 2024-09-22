@@ -1,6 +1,7 @@
 # dynamic-calendar
 Dynamic Calendar using HTML CSS and Javascript
-## 
+
+## Features
 - This web page will display the current month's calendar
 - Today's date will be dynamically highlighted
 - The dates will be dynamically aligned to their corresponding name of the week such as Mon, Tue, etc
