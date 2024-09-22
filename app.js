@@ -1,33 +1,30 @@
 let dates=document.getElementById('dates');
 
-let todayDate=new Date();
-console.log(todayDate.getDate())
+const todayDate=new Date();
+const currentYear=todayDate.getFullYear();
+const currentMonth=todayDate.getMonth();
+const currentDate=todayDate.getDate();
 
+//display year in the div
 document.getElementById('year').innerHTML=todayDate.getFullYear();
 
+//display month in the div
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
-// console.log(monthNames[todayDate.getMonth()]);
 document.getElementById('month').innerHTML=monthNames[todayDate.getMonth()];
 
 
-currentYear=todayDate.getFullYear();
-currentMonth=todayDate.getMonth();
-
-currentDate=todayDate.getDate();
-firstDateOfMonth=new Date(currentYear,currentMonth,1);
-firstDayOfMonth=firstDateOfMonth.getDay()
-console.log("First Date's Day: ",firstDayOfMonth)
-
-
-
+//display blank in days from previous month
+const firstDateOfMonth=new Date(currentYear,currentMonth,1);
+const firstDayOfMonth=firstDateOfMonth.getDay()
 for(let i=1;i<=firstDayOfMonth;i++){
     dates.innerHTML+='<div class="date-item inactive-date"><div>';
 }
 
-
-for(let i=1;i<=30;i++){
+//display dates of current month
+const lastDateOfMonth=new Date(currentYear,currentMonth+1,0).getDate();
+for(let i=1;i<=lastDateOfMonth;i++){
     if(i==currentDate){
         dates.innerHTML+='<div class="date-item active-date">'+i+'<div>';
 
